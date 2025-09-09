@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-// import router from "./routes";
+import router from "./routes";
 import connectDB from "./db";
 
 dotenv.config();
@@ -17,7 +17,7 @@ app.get("/", (req, res) => {
   res.send("Server is ON");
 });
 
-// app.use("/api", router);
+app.use("/api", router);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
